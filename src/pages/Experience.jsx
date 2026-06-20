@@ -44,8 +44,8 @@ export default function Experience() {
             animate={bioInView ? 'visible' : 'hidden'}
           >
             <div className="absolute -inset-4 bg-primary/20 blur-3xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
-            <div className="relative rounded-2xl overflow-hidden aspect-square shadow-2xl">
-              <img alt="Dhanush K Portrait" className="w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700" src="/biography.jpg" />
+            <div className="relative shadow-2xl rounded-2xl" style={{ transform: 'translateZ(0)', WebkitTransform: 'translateZ(0)' }}>
+              <img alt="Dhanush K Portrait" className="w-full h-full object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-700" src="/biography.jpg" />
             </div>
           </motion.div>
         </div>
