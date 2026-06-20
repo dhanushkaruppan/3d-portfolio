@@ -71,13 +71,15 @@ export default function Navbar() {
               )}
             </a>
           ))}
-          <motion.button
-            className="bg-primary text-on-primary px-6 py-2 rounded-full font-label-sm text-label-sm glow-button"
+          <motion.a
+            href="/resume-dhanush.pdf"
+            download="Resume_Dhanush.pdf"
+            className="bg-primary text-on-primary px-6 py-2 rounded-full font-label-sm text-label-sm glow-button inline-block"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Resume
-          </motion.button>
+          </motion.a>
         </div>
         <button className="md:hidden text-primary">
           <span className="material-symbols-outlined">menu</span>

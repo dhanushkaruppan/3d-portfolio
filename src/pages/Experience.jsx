@@ -211,7 +211,7 @@ export default function Experience() {
               I'm currently looking for new opportunities to apply my skills in AI and Full-stack development. Let's build something remarkable.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-              <button className="bg-primary text-on-primary font-bold px-8 py-4 rounded-xl hover:scale-105 transition-transform glow-sm">Download Full Resume</button>
+              <a href="/resume-dhanush.pdf" download="Resume_Dhanush.pdf" className="bg-primary text-on-primary font-bold px-8 py-4 rounded-xl hover:scale-105 transition-transform glow-sm inline-block">Download Full Resume</a>
               <a className="border-2 border-primary text-primary font-bold px-8 py-4 rounded-xl hover:bg-primary/5 transition-colors inline-block" href="#contact">Get In Touch</a>
             </div>
           </div>
