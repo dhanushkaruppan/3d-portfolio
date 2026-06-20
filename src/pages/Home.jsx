@@ -83,9 +83,9 @@ export default function Home() {
           <motion.div
             ref={parallaxRef}
             className="w-full lg:w-[45%] lg:absolute lg:right-0 lg:top-0 lg:bottom-0 h-[400px] lg:h-full flex justify-end items-end lg:items-center pointer-events-none"
-            style={{ y: parallaxY }}
+            style={{ y: parallaxY, transform: 'translateZ(0)', WebkitTransform: 'translateZ(0)' }}
           >
-            <img src="/profile.png" alt="Dhanush K" className="w-full h-full object-cover lg:object-cover object-top lg:object-center mix-blend-screen opacity-90" />
+            <img src="/profile.png" alt="Dhanush K" className="w-full h-full object-cover lg:object-cover object-top lg:object-center" />
             <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent lg:w-1/3 z-10"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent h-1/3 bottom-0 z-10 lg:hidden"></div>
           </motion.div>
