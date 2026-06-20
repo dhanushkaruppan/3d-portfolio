@@ -1,0 +1,574 @@
+/* ════════════════════════════════════════════════════════════════════════════
+   AGRIDRONE — Spline-inspired Tech Noir / High-Tech Editorial Design System
+   Palette: Pure Black | Off-White | Electric Cyan | Hot Coral | Glass Iridescence
+   ════════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+/* ── Reset & Base ──────────────────────────────────────────────────────────── */
+
+
+:root {
+  --black:     #000000;
+  --deep:      #07070d;
+  --surface:   #0c0c14;
+  --white:     #f0f0f0;
+  --white-dim: #a8a8b3;
+  --cyan:      #00e5ff;
+  --coral:     #ff0060;
+  --green:     #00ff88;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+.agri-drone-page { scroll-behavior: smooth; }
+
+.agri-drone-page {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  margin: 0;
+  
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Grain Noise Overlay (Spline signature texture) ─────────────────────────
+   Creates a subtle grain/noise texture over the entire page, giving it that
+   premium sandblasted/editorial feel from the reference design.              */
+.agri-drone-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  mix-blend-mode: overlay;
+}
+
+/* ── Scroll Container ────────────────────────────────────────────────────── */
+#scroll-container {
+  height: 350vh;
+  position: relative;
+}
+
+#sticky-view {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  
+}
+
+/* ── Navigation ──────────────────────────────────────────────────────────── */
+.agri-drone-page nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 18px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--cyan);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover { color: var(--white); }
+.nav-link:hover::after { width: 100%; }
+
+.btn-launch {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--white);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-launch:hover {
+  background: var(--cyan);
+  box-shadow: 0 0 28px rgba(0,229,255,0.4);
+  transform: translateY(-1px);
+}
+
+/* ── Technical Corner Labels (The Spline "FORM EARTH / TARGET MARS" feature) */
+.corner-labels {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.corner-label {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.6;
+}
+
+.corner-label.tl { top: 80px; left: 48px; }
+.corner-label.tr { top: 80px; right: 48px; text-align: right; }
+.corner-label.bl { bottom: 48px; left: 48px; }
+.corner-label.br { bottom: 48px; right: 48px; text-align: right; }
+
+.corner-label strong {
+  display: block;
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 700;
+}
+
+/* ── Plus Decorators ─────────────────────────────────────────────────────── */
+.plus-decor {
+  position: fixed;
+  z-index: 50;
+  pointer-events: none;
+  color: rgba(255,255,255,0.15);
+  font-size: 18px;
+  line-height: 1;
+  font-family: var(--font-mono);
+  font-weight: 300;
+}
+
+/* ── Content Blocks ──────────────────────────────────────────────────────── */
+.content-block {
+  position: absolute;
+  top: 50%;
+  width: 44%;
+  opacity: 0;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.85s ease;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.content-block-left {
+  left: 5%;
+  transform: translateY(-50%) translateX(-30px);
+}
+
+.content-block-right {
+  right: 5%;
+  transform: translateY(-50%) translateX(30px);
+}
+
+.content-block.active {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+  pointer-events: auto;
+  filter: none;
+}
+
+.content-block.inactive-up {
+  opacity: 0;
+  transform: translateY(-60%) translateX(0);
+  filter: blur(4px);
+}
+
+.content-block.inactive-down {
+  opacity: 0;
+  transform: translateY(-40%) translateX(0);
+  filter: blur(4px);
+}
+
+/* ── Block Number Label ───────────────────────────────────────────────────── */
+.block-number {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  margin-bottom: clamp(10px, 2vh, 20px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.block-number::after {
+  content: '';
+  flex: 1;
+  max-width: 40px;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* ── Section Tag Pill ────────────────────────────────────────────────────── */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  border: 1px solid rgba(0,229,255,0.2);
+  padding: 6px 14px;
+  border-radius: 2px;
+  margin-bottom: clamp(12px, 2.5vh, 24px);
+  background: rgba(0,229,255,0.04);
+}
+
+.section-tag .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+  animation: pulse-dot 2s ease infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* ── Headline Typography ─────────────────────────────────────────────────── */
+.headline {
+  font-family: var(--font-body);
+  font-size: clamp(24px, 4.5vw, 64px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: clamp(10px, 2vh, 20px);
+}
+
+/* Gradient headline variant (Spline-style bright white with color accent) */
+.headline-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0f0 40%, var(--cyan) 80%, var(--coral) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: headline-shimmer 6s linear infinite;
+}
+
+@keyframes headline-shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── Body Copy ───────────────────────────────────────────────────────────── */
+.body-copy {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.5vw, 17px);
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.5);
+  max-width: 480px;
+  margin-bottom: clamp(16px, 3vh, 32px);
+}
+
+/* ── Data Row (Spline-style technical specs) ─────────────────────────────── */
+.data-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.03);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--white-dim);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.data-row:hover {
+  border-color: rgba(0,229,255,0.25);
+  background: rgba(0,229,255,0.04);
+}
+
+.data-row .label {
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.data-row .value {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+/* ── Metric Bar ──────────────────────────────────────────────────────────── */
+.metric-container {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
+  padding: 20px 22px;
+  background: rgba(255,255,255,0.02);
+  max-width: 380px;
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.metric-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+.metric-value {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.metric-bar-track {
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 1px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.metric-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--cyan), var(--coral));
+  border-radius: 1px;
+  box-shadow: 0 0 12px rgba(0,229,255,0.5);
+  animation: bar-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes bar-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(0,229,255,0.4); }
+  50% { box-shadow: 0 0 20px rgba(0,229,255,0.8); }
+}
+
+.metric-.agri-drone-page footer {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ── Primary CTA Button ──────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--white);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+  background: var(--cyan);
+  box-shadow: 0 0 32px rgba(0,229,255,0.5);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 14px 28px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-outline:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: 0 0 20px rgba(0,229,255,0.15);
+  transform: translateY(-2px);
+}
+
+/* ── Scroll Badge (Spline-style rotating scroll indicator) ───────────────── */
+.scroll-badge {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+}
+
+.scroll-badge-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.scroll-badge-text {
+  position: absolute;
+  inset: 0;
+  animation: badge-spin 12s linear infinite;
+}
+
+.scroll-badge-text svg {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-badge-text text {
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  fill: rgba(255,255,255,0.35);
+  letter-spacing: 3.5px;
+}
+
+@keyframes badge-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Glass Panel ─────────────────────────────────────────────────────────── */
+.glass-panel {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 4px;
+  transition: border-color 0.4s ease;
+}
+
+.glass-panel:hover {
+  border-color: rgba(0,229,255,0.2);
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+.agri-drone-page footer {
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 32px 48px;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.agri-drone-page footer a {
+  color: rgba(255,255,255,0.2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.agri-drone-page footer a:hover { color: var(--cyan); }
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .agri-drone-page nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+
+  .content-block {
+    width: 90%;
+    left: 5% !important;
+    right: 5% !important;
+    text-align: center;
+  }
+
+  .content-block-left,
+  .content-block-right {
+    left: 5%;
+    right: 5%;
+    transform: translateY(-50%) translateX(0);
+  }
+
+  .content-block.active { transform: translateY(-50%) translateX(0); }
+  .content-block.inactive-up { transform: translateY(-60%); }
+  .content-block.inactive-down { transform: translateY(-40%); }
+
+  .body-copy { max-width: 100%; }
+  .corner-label.bl, .corner-label.br { display: none; }
+  .agri-drone-page footer { flex-direction: column; gap: 16px; text-align: center; padding: 24px; }
+}
+
+

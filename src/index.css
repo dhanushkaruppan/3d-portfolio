@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-on-background;
+    
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  /* Prevent phone number auto-detection on iOS */
+  a[href^="tel"] {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  .glow-sm {
+    text-shadow: 0 0 10px rgba(255, 178, 183, 0.5);
+  }
+  .glass-card {
+    background: rgba(18, 20, 20, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .glass-card:hover {
+    background: rgba(26, 28, 28, 0.5);
+    border-color: rgba(255, 178, 183, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(255, 178, 183, 0.15);
+  }
+  .glass-card-light {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .glass-card-light:hover {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 178, 183, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(255, 178, 183, 0.2);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #ffb2b7 0%, #ff506b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glow-button {
+    transition: all 0.3s ease;
+  }
+  .glow-button:hover {
+    box-shadow: 0 0 20px rgba(255, 178, 183, 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* 3D Transform Utilities */
+  .perspective-container {
+    
+    transform-style: preserve-3d;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  /* 3D Tilt Card on Hover */
+  .tilt-card {
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+  }
+  .tilt-card:hover {
+    transform: perspective(800px) rotateY(-4deg) rotateX(4deg) scale(1.02);
+    box-shadow: 0 20px 60px rgba(255, 178, 183, 0.15);
+  }
+
+  /* Fullscreen section helper */
+  .section-fullscreen {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: subtle-float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

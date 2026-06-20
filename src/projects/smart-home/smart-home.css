@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+/* Smart Home Theme (Deep Azure, Electric Blue, Bright White) */
+.smart-home-page {
+    background: radial-gradient(circle at 50% 0%, #002244 0%, #000814 100%);
+    color: #f8fafc;
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.smart-home-page #scroll-container {
+    height: 350vh;
+    position: relative;
+}
+
+.smart-home-page #sticky-view {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    
+    perspective: 1200px;
+}
+
+.smart-home-page .glass-panel {
+    background: rgba(0, 30, 60, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(0, 180, 255, 0.2);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smart-home-page .glass-panel:hover {
+    border-color: rgba(0, 220, 255, 0.6);
+    box-shadow: 0 0 30px rgba(0, 180, 255, 0.2);
+    background: rgba(0, 40, 80, 0.6);
+}
+
+.smart-home-page .text-gradient {
+    background: linear-gradient(to right, #ffffff, #00d4ff, #0044ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shimmer-electric 4s linear infinite;
+}
+
+.smart-home-page .content-block {
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    opacity: 0;
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+
+.smart-home-page .content-block-left {
+    left: 8%;
+    right: auto;
+    text-align: left;
+    transform: translateY(-50%) translateX(-40px) scale(0.95);
+}
+
+.smart-home-page .content-block-right {
+    left: auto;
+    right: 8%;
+    text-align: left;
+    transform: translateY(-50%) translateX(40px) scale(0.95);
+}
+
+.smart-home-page .content-block.active {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) scale(1);
+    pointer-events: auto;
+}
+
+.smart-home-page .content-block.inactive-up {
+    opacity: 0;
+    transform: translateY(-60%) translateX(0);
+    filter: blur(8px);
+}
+
+.smart-home-page .content-block.inactive-down {
+    opacity: 0;
+    transform: translateY(-40%) translateX(0);
+    filter: blur(8px);
+}
+
+@media (max-width: 1024px) {
+    .smart-home-page .content-block {
+        width: 88%;
+        left: 6% !important;
+        right: 6% !important;
+        text-align: center !important;
+        transform: translateY(-50%) scale(0.95);
+    }
+    
+    .smart-home-page .content-block-left,
+    .smart-home-page .content-block-right {
+        text-align: center;
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    .smart-home-page .content-block.active {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+@keyframes shimmer-electric {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.smart-home-page .cyber-button {
+    background: linear-gradient(135deg, rgba(0, 136, 255, 0.1), rgba(0, 68, 255, 0.2));
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 15px rgba(0, 136, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.smart-home-page .cyber-button:hover {
+    background: linear-gradient(135deg, rgba(0, 136, 255, 0.2), rgba(0, 68, 255, 0.4));
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+    transform: translateY(-2px);
+    border-color: rgba(0, 212, 255, 0.8);
+}
+
+

@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;600;700&display=swap');
+
+/* Smart Helmet Theme (Deep Charcoal, Neon Orange, Emergency Red) */
+.smart-helmet-page {
+    background: radial-gradient(circle at 50% 50%, #1a0505 0%, #0a0202 100%);
+    color: #f8fafc;
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.smart-helmet-page #scroll-container {
+    height: 350vh;
+    position: relative;
+}
+
+.smart-helmet-page #sticky-view {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    
+    perspective: 1200px;
+}
+
+.smart-helmet-page .glass-panel {
+    background: rgba(20, 5, 5, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 60, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smart-helmet-page .glass-panel:hover {
+    border-color: rgba(255, 42, 42, 0.6);
+    box-shadow: 0 0 30px rgba(255, 42, 42, 0.25);
+}
+
+.smart-helmet-page .text-gradient {
+    background: linear-gradient(to right, #ffffff, #ff7a00, #ff2a2a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shimmer-alert 4s linear infinite;
+    text-shadow: 0 0 20px rgba(255, 60, 0, 0.3);
+}
+
+.smart-helmet-page .content-block {
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    opacity: 0;
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+
+.smart-helmet-page .content-block-left {
+    left: 6%;
+    right: auto;
+    text-align: left;
+    transform: translateY(-50%) translateX(-40px) rotateY(12deg);
+}
+
+.smart-helmet-page .content-block-right {
+    left: auto;
+    right: 6%;
+    text-align: left;
+    transform: translateY(-50%) translateX(40px) rotateY(-12deg);
+}
+
+.smart-helmet-page .content-block.active {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) rotateY(0deg);
+    pointer-events: auto;
+}
+
+.smart-helmet-page .content-block.inactive-up {
+    opacity: 0;
+    transform: translateY(-60%) translateX(0);
+    filter: blur(4px);
+}
+
+.smart-helmet-page .content-block.inactive-down {
+    opacity: 0;
+    transform: translateY(-40%) translateX(0);
+    filter: blur(4px);
+}
+
+@media (max-width: 1024px) {
+    .smart-helmet-page .content-block {
+        width: 88%;
+        left: 6% !important;
+        right: 6% !important;
+        text-align: center !important;
+        transform: translateY(-50%) scale(0.95);
+    }
+    
+    .smart-helmet-page .content-block-left,
+    .smart-helmet-page .content-block-right {
+        text-align: center;
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    .smart-helmet-page .content-block.active {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+.smart-helmet-page .btn-glow {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smart-helmet-page .btn-glow:hover {
+    box-shadow: 0 0 25px rgba(255, 122, 0, 0.5);
+    transform: translateY(-1px) scale(1.02);
+}
+
+@keyframes shimmer-alert {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+@keyframes pulse-emergency {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 42, 42, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 42, 42, 0); }
+}
+
+.smart-helmet-page .animate-pulse-emergency {
+    animation: pulse-emergency 2s infinite;
+}
+
+.smart-helmet-page .font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+}
+.smart-helmet-page .font-space-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+

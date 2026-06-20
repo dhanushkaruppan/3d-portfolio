@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects | Dhanush K</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#40000e",
+                    "secondary-container": "#4a4949",
+                    "on-background": "#e2e2e2",
+                    "outline": "#ad8789",
+                    "on-secondary-container": "#bab8b7",
+                    "inverse-on-surface": "#2f3131",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-error-container": "#ffdad6",
+                    "on-surface-variant": "#e7bcbe",
+                    "on-error": "#690005",
+                    "secondary": "#c9c6c5",
+                    "surface": "#121414",
+                    "tertiary": "#c8c6c5",
+                    "inverse-primary": "#be003a",
+                    "tertiary-fixed": "#e5e2e1",
+                    "surface-dim": "#121414",
+                    "inverse-surface": "#e2e2e2",
+                    "primary-container": "#ff506b",
+                    "surface-tint": "#ffb2b7",
+                    "on-surface": "#e2e2e2",
+                    "on-secondary-fixed-variant": "#474646",
+                    "tertiary-container": "#929090",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "primary-fixed": "#ffdadb",
+                    "on-primary-fixed-variant": "#91002b",
+                    "secondary-fixed": "#e5e2e1",
+                    "secondary-fixed-dim": "#c9c6c5",
+                    "surface-container-high": "#282a2b",
+                    "on-tertiary-container": "#2a2a2a",
+                    "surface-variant": "#333535",
+                    "outline-variant": "#5d3f41",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-secondary": "#313030",
+                    "error": "#ffb4ab",
+                    "primary": "#ffb2b7",
+                    "background": "#121414",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "surface-container": "#1e2020",
+                    "surface-container-low": "#1a1c1c",
+                    "error-container": "#93000a",
+                    "primary-fixed-dim": "#ffb2b7",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-primary-container": "#5b0017",
+                    "on-tertiary": "#313030",
+                    "on-primary": "#67001c",
+                    "surface-bright": "#38393a",
+                    "surface-container-highest": "#333535"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "container-max": "1280px",
+                    "stack-lg": "4rem",
+                    "gutter": "24px",
+                    "stack-md": "2rem",
+                    "margin-mobile": "20px",
+                    "stack-sm": "1rem"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e2e2e2;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 30px 0 rgba(255, 178, 183, 0.15);
+            border-color: rgba(255, 178, 183, 0.4);
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #ffb2b7, #ff506b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a class="font-headline-lg text-headline-lg font-extrabold tracking-tighter text-primary" href="#">Dhanush K</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Skills</a>
+<a class="font-label-sm text-label-sm text-primary font-bold border-b-2 border-primary pb-1" href="#">Projects</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-6 py-2 rounded-full hover:glow-sm active:scale-95 transition-all duration-300">Resume</button>
+</div>
+</nav>
+<main class="pt-32 pb-stack-lg">
+<!-- Hero Header -->
+<header class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-stack-lg">
+<div class="max-w-3xl">
+<span class="text-primary font-label-sm text-label-sm tracking-widest uppercase mb-4 block">Portfolio</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight">Crafting the <span class="gradient-text">Future</span> of IoT &amp; AI.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A curated showcase of engineering explorations, from autonomous drones to generative AI applications.</p>
+</div>
+</header>
+<!-- Projects Bento Grid -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Project 1: Agriculture Drone (Featured Large) -->
+<div class="md:col-span-8 bg-surface-container-low border border-white/5 rounded-xl overflow-hidden group glow-hover transition-all duration-500 flex flex-col md:flex-row">
+<div class="md:w-1/2 h-64 md:h-auto relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A sophisticated agricultural drone hovering over a lush green field during sunset. The drone features high-tech sensors and a sleek carbon fiber frame, captured with cinematic lighting and deep contrast. The scene is futuristic and professional, emphasizing the convergence of technology and nature in a dark-mode tech aesthetic with hints of pink glow from its status lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPgxF4DyOJFtmtIXeaPwZozxR-HmAtcOfIvuXewO-yv3oDWUXAkB2g8gMfdnQGxpX0NdUBJxgeYLmt5AepOZV2Xw4XMANM0AcQWN8zPqhEWtC82kF6pASyS0e-u0VcKelVi_sbM-qs1Yj3Skch9fPCGxWGfyaO7UB1z1746EmcDeIjKDkD7IoAZyVfHGRJedMLQb1q9jaGoiftquU7oBhYOTPZjCXI2FxaQUmHnwQm8cVslw3iATs9H3U4lblZUIjpn-H97dkeljs"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/20 text-primary border border-primary/30 font-label-sm text-label-sm px-3 py-1 rounded-full backdrop-blur-md">Ongoing</span>
+</div>
+</div>
+<div class="md:w-1/2 p-8 flex flex-col justify-center">
+<div class="flex items-center gap-2 text-primary mb-3">
+<span class="material-symbols-outlined text-xl">precision_manufacturing</span>
+<span class="font-label-sm text-label-sm">Robotics &amp; IoT</span>
+</div>
+<h3 class="font-headline-xl text-headline-xl mb-4">Agriculture Drone Monitoring</h3>
+<p class="text-on-surface-variant mb-6 font-body-md text-body-md">Advanced real-time crop health assessment and terrain mapping using autonomous flight algorithms and localized data processing.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 bg-surface-variant border border-white/10 rounded font-label-sm text-label-sm text-on-surface">IoT</span>
+<span class="px-3 py-1 bg-surface-variant border border-white/10 rounded font-label-sm text-label-sm text-on-surface">Raspberry Pi</span>
+</div>
+<button class="flex items-center gap-2 text-primary font-label-sm text-label-sm group-hover:gap-4 transition-all">
+                            View Case Study <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project 2: Smart Helmet -->
+<div class="md:col-span-4 bg-surface-container-low border border-white/5 rounded-xl p-8 group glow-hover transition-all duration-500 flex flex-col">
+<div class="bg-surface-variant w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-primary border border-white/10">
+<span class="material-symbols-outlined text-3xl">medical_services</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Smart Helmet</h3>
+<p class="text-on-surface-variant mb-6 flex-grow">Accident detection and emergency response system utilizing SW-420 vibration sensors and integrated camera modules for immediate impact analysis.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 bg-surface-variant border border-white/10 rounded font-label-sm text-label-sm text-on-surface">SW-420</span>
+<span class="px-3 py-1 bg-surface-variant border border-white/10 rounded font-label-sm text-label-sm text-on-surface">Camera</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Status: <span class="text-on-surface">Completed</span></span>
+<a class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" href="#">open_in_new</a>
+</div>
+</div>
+<!-- Project 3: Daily Dose'u -->
+<div class="md:col-span-4 bg-surface-container-low border border-white/5 rounded-xl overflow-hidden group glow-hover transition-all duration-500">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:scale-110 group-hover:grayscale-0 transition-all duration-700" data-alt="A premium mobile application interface displayed on a sleek smartphone. The UI is modern with dark glassmorphism cards and vibrant neon pink accents. It showcases a health or productivity dashboard with clean typography and smooth data visualizations. The background is a minimalist studio setting with soft pink ambient lighting, reflecting a professional high-end tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo0kNsfsQqa4VZMwXWfK6T5nKSN5GtfIr_x1qfotI-phVHopEF66WjEeS8wK5cwirZC9Dhcu7-2P7AuEIwiOZj8mCv8RVDlHxI7tns8_XCQz18WNttEz_HkzCYFOpkxFPNZq-SeghEDJlXMuxdvcpplVS706V_AMfOQvzeVk9QpPKyBh3CHZ3m8sILlbgn7xbCnGqyqFf7bndkP1iTgEbtlYLd83mgo6SE0Qz9PDT9DIMqfxRAwlmSIIzN2eGIRXwUmZ02Hry-CT0"/>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 text-primary mb-3">
+<span class="material-symbols-outlined text-xl">neurology</span>
+<span class="font-label-sm text-label-sm">Generative AI</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Daily Dose'u</h3>
+<p class="text-on-surface-variant mb-6">A mobile ecosystem integrating Gemini API to provide personalized daily insights and wellness recommendations based on user activity.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-variant border border-white/10 rounded font-label-sm text-label-sm text-on-surface">Dart</span>
+<span class="px-3 py-1 bg-surface-variant border border-white/10 rounded font-label-sm text-label-sm text-on-surface">Flutter</span>
+<span class="px-3 py-1 bg-surface-variant border border-white/10 rounded font-label-sm text-label-sm text-on-surface">Gemini</span>
+</div>
+</div>
+</div>
+<!-- Project 4: Smart Home -->
+<div class="md:col-span-4 bg-surface-container-low border border-white/5 rounded-xl p-8 group glow-hover transition-all duration-500 flex flex-col">
+<div class="bg-surface-variant w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-primary border border-white/10">
+<span class="material-symbols-outlined text-3xl">bolt</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Smart Home Hub</h3>
+<p class="text-on-surface-variant mb-6 flex-grow">Custom-built ESP32 switchboard providing wireless control and energy monitoring through a unified Flutter dashboard.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 bg-surface-variant border border-white/10 rounded font-label-sm text-label-sm text-on-surface">ESP32</span>
+<span class="px-3 py-1 bg-surface-variant border border-white/10 rounded font-label-sm text-label-sm text-on-surface">Flutter</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Status: <span class="text-on-surface">Stable</span></span>
+<a class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" href="#">link</a>
+</div>
+</div>
+<!-- Project 5: Movie Prediction -->
+<div class="md:col-span-4 bg-surface-container-low border border-white/5 rounded-xl p-8 group glow-hover transition-all duration-500 flex flex-col">
+<div class="bg-surface-variant w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-primary border border-white/10">
+<span class="material-symbols-outlined text-3xl">movie</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Genre Prediction</h3>
+<p class="text-on-surface-variant mb-6 flex-grow">Deep learning model utilizing CNN architectures for automated movie genre classification based on visual metadata.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 bg-surface-variant border border-white/10 rounded font-label-sm text-label-sm text-on-surface">TensorFlow</span>
+<span class="px-3 py-1 bg-surface-variant border border-white/10 rounded font-label-sm text-label-sm text-on-surface">CNN</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Status: <span class="text-on-surface">MVP</span></span>
+<a class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" href="#">code</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-white/10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full py-stack-lg">
+<div class="flex flex-col gap-2 text-center md:text-left">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Dhanush K</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">© 2024 Dhanush K. Built for the future of IoT &amp; AI.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary hover:scale-110 transition-all duration-300 font-label-sm text-label-sm" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary hover:scale-110 transition-all duration-300 font-label-sm text-label-sm" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary hover:scale-110 transition-all duration-300 font-label-sm text-label-sm" href="#">Twitter</a>
+<a class="text-on-surface-variant hover:text-primary hover:scale-110 transition-all duration-300 font-label-sm text-label-sm" href="#">Email</a>
+</div>
+</div>
+</footer>
+<script>
+        // Subtle Mouse Follow effect for cards
+        document.querySelectorAll('.glow-hover').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

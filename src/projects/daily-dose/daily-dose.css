@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;600&display=swap');
+
+/* Daily Dose Theme (Deep Violet, Magenta, Cyan) */
+.daily-dose-page {
+    background: radial-gradient(circle at 80% 20%, #2a0044 0%, #0a001a 100%);
+    color: #f8fafc;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.daily-dose-page #scroll-container {
+    height: 350vh;
+    position: relative;
+}
+
+.daily-dose-page #sticky-view {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    
+    perspective: 1200px;
+}
+
+.daily-dose-page .glass-panel {
+    background: rgba(40, 0, 80, 0.3);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 0, 170, 0.2);
+    border-radius: 24px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.daily-dose-page .glass-panel:hover {
+    border-color: rgba(0, 240, 255, 0.5);
+    box-shadow: 0 0 40px rgba(170, 0, 255, 0.3);
+}
+
+.daily-dose-page .text-gradient {
+    background: linear-gradient(to right, #00f0ff, #ff00aa, #aa00ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shimmer-ai 5s linear infinite;
+}
+
+.daily-dose-page .content-block {
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    opacity: 0;
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+
+.daily-dose-page .content-block-left {
+    left: 10%;
+    right: auto;
+    text-align: left;
+    transform: translateY(-50%) translateX(-40px);
+}
+
+.daily-dose-page .content-block-right {
+    left: auto;
+    right: 10%;
+    text-align: left;
+    transform: translateY(-50%) translateX(40px);
+}
+
+.daily-dose-page .content-block.active {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+    pointer-events: auto;
+}
+
+.daily-dose-page .content-block.inactive-up {
+    opacity: 0;
+    transform: translateY(-60%) translateX(0);
+    filter: blur(10px);
+}
+
+.daily-dose-page .content-block.inactive-down {
+    opacity: 0;
+    transform: translateY(-40%) translateX(0);
+    filter: blur(10px);
+}
+
+@media (max-width: 1024px) {
+    .daily-dose-page .content-block {
+        width: 88%;
+        left: 6% !important;
+        right: 6% !important;
+        text-align: center !important;
+        transform: translateY(-50%) scale(0.95);
+    }
+    
+    .daily-dose-page .content-block-left,
+    .daily-dose-page .content-block-right {
+        text-align: center;
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    .daily-dose-page .content-block.active {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+@keyframes shimmer-ai {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.daily-dose-page .font-syne {
+    font-family: 'Syne', sans-serif;
+}
+
+
