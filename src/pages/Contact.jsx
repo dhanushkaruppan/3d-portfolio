@@ -114,15 +114,15 @@ export default function Contact() {
           {/* Agentic Workflows / Tech Stack Section */}
           <ScrollSlideLeft>
             <TiltCard className="glass-card p-8 rounded-xl">
-              <h3 className="font-label-sm text-label-sm text-on-surface-variant mb-6 uppercase tracking-widest">Agentic Workflows & Stack</h3>
+              <h3 className="font-label-sm text-label-sm text-on-surface-variant mb-6 uppercase tracking-widest">Tech Stack & Tools</h3>
               <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-label-sm text-label-sm">LangChain</span>
-                <span className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-label-sm text-label-sm">AutoGPT</span>
+                <span className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-label-sm text-label-sm">React</span>
+                <span className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-label-sm text-label-sm">Python</span>
                 <span className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-label-sm text-label-sm">PyTorch</span>
                 <span className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-label-sm text-label-sm">Node.js</span>
                 <span className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-label-sm text-label-sm">AWS IoT</span>
                 <span className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-label-sm text-label-sm">Docker</span>
-                <span className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-label-sm text-label-sm">Kubernetes</span>
+                <span className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-label-sm text-label-sm">Embedded C</span>
                 <span className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-label-sm text-label-sm">Vercel</span>
               </div>
             </TiltCard>
