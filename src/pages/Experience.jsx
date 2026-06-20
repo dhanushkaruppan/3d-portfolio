@@ -44,9 +44,9 @@ export default function Experience() {
             animate={bioInView ? 'visible' : 'hidden'}
           >
             <div className="absolute -inset-4 bg-primary/20 blur-3xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
-            <TiltCard className="relative rounded-2xl overflow-hidden aspect-square border border-white/10 glass-card">
-              <img alt="Dhanush K Portrait" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="/biography.jpg" />
-            </TiltCard>
+            <div className="relative rounded-2xl overflow-hidden aspect-square border border-white/10 glass-card">
+              <img alt="Dhanush K Portrait" className="w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700" src="/biography.jpg" />
+            </div>
           </motion.div>
         </div>
       </section>
