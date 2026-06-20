@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useParallax, staggerContainer, fadeUp3D, slideInLeft, flipInX } from '../hooks/useScrollAnimation';
 import TiltCard from '../components/TiltCard';
@@ -10,6 +10,14 @@ export default function Home() {
   const ctaRef = useRef(null);
   const ctaInView = useInView(ctaRef, { once: true, margin: '-100px' });
   const { ref: parallaxRef, y: parallaxY } = useParallax(0.3);
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)');
+    setIsDesktop(mq.matches);
+    const handler = (e) => setIsDesktop(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
 
   return (
     <main>
@@ -79,16 +87,22 @@ export default function Home() {
             </motion.div>
           </motion.div>
           
-          {/* Right Column: Parallax Image */}
-          <motion.div
-            ref={parallaxRef}
-            className="w-full lg:w-[45%] lg:absolute lg:right-0 lg:top-0 lg:bottom-0 h-[400px] lg:h-full flex justify-end items-end lg:items-center pointer-events-none"
-            style={{ y: parallaxY, transform: 'translateZ(0)', WebkitTransform: 'translateZ(0)' }}
-          >
-            <img src="/profile.png" alt="Dhanush K" className="w-full h-full object-cover lg:object-cover object-top lg:object-center" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent lg:w-1/3 z-10"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent h-1/3 bottom-0 z-10 lg:hidden"></div>
-          </motion.div>
+          {/* Right Column: Image — parallax only on desktop to prevent Android Chrome GPU slicing bug */}
+          {isDesktop ? (
+            <motion.div
+              ref={parallaxRef}
+              className="w-full lg:w-[45%] lg:absolute lg:right-0 lg:top-0 lg:bottom-0 h-[400px] lg:h-full flex justify-end items-end lg:items-center pointer-events-none"
+              style={{ y: parallaxY }}
+            >
+              <img src="/profile.png" alt="Dhanush K" className="w-full h-full object-cover object-top lg:object-center" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent lg:w-1/3 z-10"></div>
+            </motion.div>
+          ) : (
+            <div className="w-full h-[420px] flex justify-center items-end pointer-events-none relative">
+              <img src="/profile.png" alt="Dhanush K" className="w-full h-full object-cover object-top" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
+            </div>
+          )}
         </div>
       </section>
 
